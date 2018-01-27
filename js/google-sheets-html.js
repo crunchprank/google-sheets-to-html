@@ -28,6 +28,7 @@ function handleQueryResponse(response) {
     var data = response.getDataTable();
     visualization = new google.visualization.Table(document.getElementById('table'));
     visualization.draw(data, {
+        allowHtml: true,
         legend: 'bottom'
     });
 }
