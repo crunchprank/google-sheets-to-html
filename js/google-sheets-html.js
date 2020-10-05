@@ -1,6 +1,6 @@
 /*!
  * 
- * Google Sheets To HTML v0.9a
+ * Google Sheets To HTML v0.9b
  * 
  * To use, simply replace the "tq?key=" value in the
  * URL below with your own unique Google document ID
@@ -9,13 +9,11 @@
  * 
  */
 
-google.load('visualization', '1', {
-    packages: ['table']
-});
+google.charts.load('current', {packages: ['table']});
 var visualization;
 
 function drawVisualization() {
-    var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1y8QRGUT0bb0Wx6lAHbMjNxU7Zs96WDJE9SXRiuQQfJc&output=html&usp=sharing');
+    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1y8QRGUT0bb0Wx6lAHbMjNxU7Zs96WDJE9SXRiuQQfJc/gviz/tq?output=html&usp=sharing');
     query.setQuery('SELECT A, B, C, D label A "Duration", B "Song", C "Requested By", D "URL"');
     query.send(handleQueryResponse);
 }
